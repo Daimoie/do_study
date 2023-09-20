@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzb.shopping.dao.ProductSpecDAO">
+    <select id="list" resultType="com.zzb.shopping.model.Product">
+         select * from product where name like concat('%',#{keyword},'%') and is_delect = 0 limit #{startNum},#{pageSize}
+    </select>
+    
+    <insert id="add" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+        insert into product (name,price,category_id,is_delect,author,create_time) values (#{name},#{price},#{categoryId},#{isDelect},#{author},#{createTime});
+    </insert>
+</mapper>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzb.shopping.dao.ImgSpecDAO">
+    <insert id="add" parameterType="com.zzb.shopping.model.Img" keyColumn="id" keyProperty="id"  useGeneratedKeys="true">
+        insert into ebiz_img (img_location,img_name,domain,is_delect,created_date,created_user) values (#{imgLocation},#{imgName}
+        ,#{domain},#{isDelect},#{createdDate},#{createdUser});
+    </insert>
+</mapper>
